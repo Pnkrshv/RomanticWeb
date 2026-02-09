@@ -122,12 +122,12 @@
     z-index: 10;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
     .message {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
     .logo {
-        font-size: 7rem;
+        font-size: 10rem;
     }
 }
