@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: main;
+    src: url(font/PlaypenSans-Bold.ttf);
+}
+
+:root {
+    --index: calc(1vh + 1vw);
+    --color-1: #ff0080;
+    --color-2: #7928ca;
+    --color-3: #4facfe;
+    --color-4: #00f2fe;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(80px);
+    z-index: -1;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+}
+
+.blob {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    opacity: 0.6;
+    animation: move 20s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    background: var(--color-1);
+    top: -10%;
+    left: -10%;
+    animation-duration: 25s;
+}
+
+.blob-2 {
+    background: var(--color-2);
+    bottom: -10%;
+    right: -10%;
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    background: var(--color-3);
+    top: 20%;
+    right: 10%;
+    animation-duration: 22s;
+    animation-delay: -2s;
+}
+
+.blob-4 {
+    background: var(--color-4);
+    bottom: 10%;
+    left: 20%;
+    animation-duration: 28s;
+    animation-delay: -7s;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30%, 20%) scale(1.2) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(-20%, 40%) scale(0.8) rotate(240deg);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1) rotate(360deg);
+    }
+}
+
+.message {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: main;
+    font-size: 3rem;
+    z-index: 1000;
+
+    & h1 {
+        margin: 10px 0;
+    }
+}
+
+.logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15rem;
+    opacity: 0;
+}
+
+.heart {
+    position: fixed;
+    top: -20px;
+    font-size: 1.5rem;
+    color: #ff4d6d;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@media (max-width: 400px) {
+    .message {
+        font-size: 2rem;
+    }
+
+    .logo {
+        font-size: 10rem;
+    }
+}
